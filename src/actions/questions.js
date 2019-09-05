@@ -60,4 +60,5 @@ export {
     RECEIVE_QUESTION,
     handleAddQuestion,
     handleQuestionAnswer,
+    receiveQuestions
 }
