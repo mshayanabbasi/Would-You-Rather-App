@@ -23,8 +23,8 @@ const users = (state={}, action) => {
                     answers: {
                         ...state[action.authedUser].answers,
                         [action.qid]: action.answer,
-                    }
-                }
+                    },
+                },
             }
         default:
             return state
