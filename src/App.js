@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
 import { handleInitialData } from './actions/shared' 
-import SignIn from './components/SignIn'
+import  SignIn from './components/SignIn'
 class App extends Component {
  componentDidMount() {
    this.props.dispatch(handleInitialData())
