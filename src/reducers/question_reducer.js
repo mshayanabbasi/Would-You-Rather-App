@@ -8,6 +8,11 @@ const question_reducer = ( state = {}, action ) => {
         case SAVE_QUESTION:
             return {
                 ...state,
+                [action.question.id]: action.question
+            }
+        case SAVE_QUESTION_ANSWER:
+            return {
+                ...state,
                 [action.qid]: {
                     ...state[action.qid],
                     [action.answer]: {
