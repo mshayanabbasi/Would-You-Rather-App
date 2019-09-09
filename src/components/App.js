@@ -1,17 +1,22 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
-
+import { dispatch_initialActionData } from '../actions/actionDispatchers' 
+import SignIn from './SignIn'
 class App extends Component {
-
+ componentDidMount() {
+   this.props.initialData()
+ }
   render() { 
     return ( 
       <div>
-        Starter Code
+        <SignIn />
       </div>
      );
   }
 }
 
+const mapDispatchToProps = (dispatch) => ({
+  initialData: () => dispatch(dispatch_initialActionData())
+})
 
- 
-export default connect()(App);
+export default connect(null,mapDispatchToProps)(App);
