@@ -12,6 +12,7 @@ import { connect } from 'react-redux'
 import { dispatch_saveQuestionAction } from '../actions/actionDispatchers'
 
 class NewQuestion extends Component {
+
     state = { 
         optionOneText: '',
         optionTwoText: '',
