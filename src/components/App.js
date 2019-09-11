@@ -1,25 +1,26 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { dispatch_initialActionData } from '../actions/actionDispatchers' 
+import { dispatch_initialDataAction } from '../actions/actionDispatchers' 
 import Loader from './Loader'
 import PropTypes from 'prop-types'
 import './styles/App.css'
 import Routers from '../routers'
+
+
 class App extends Component {
  componentDidMount() {
    this.props.initialData()
  }
   render() { 
-    return ( 
-     this.props.loading ? 
-     <Loader /> 
+    return (this.props.loading 
+    ? <Loader /> 
      : (
        <div>
          <Routers />
        </div>
      ) 
-    );
+     )
   }
 }
 
@@ -28,12 +29,13 @@ App.propTypes = {
   initialData: PropTypes.func.isRequired
 }
 
-const mapStateToProps = (state) => ({
-  loading: state.loading
-})
+
 
 const mapDispatchToProps = (dispatch) => ({
-  initialData: () => dispatch(dispatch_initialActionData())
+  initialData: () => dispatch(dispatch_initialDataAction())
+})
+const mapStateToProps = (state) => ({
+  loading: state.loading
 })
 
 export default withRouter(connect(mapStateToProps,mapDispatchToProps)(App));
