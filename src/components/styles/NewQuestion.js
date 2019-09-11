@@ -13,14 +13,14 @@ const styles = theme => ({
         marginBottom: 2,
         justifyContent: 'center',
         alignItems: 'center',
-        color: "#EABA00",
+        color: "#008080",
     },
     cssUnderline: {
         '&:after': {
-            borderBottomColor: "#EABA00",
+            borderBottomColor: "#008080",
         },
         '&:hover:not($disabled):not($focused):not($error):before': {
-            borderColor: "#EABA00",
+            borderColor: "#008080",
         }
     },
     disabled: {},
@@ -28,13 +28,13 @@ const styles = theme => ({
     error: {},
     cssOutlinedInput: {
         '&$cssFocused $notchedOutline': {
-            borderColor: "#EABA00",
+            borderColor: "#008080",
         },
     },
     notchedOutline: {},
     cssLabel: {
         '&$cssFocused': {
-            color: "#EABA00",
+            color: "#008080",
         },
     },
     cssFocused: {},
@@ -43,10 +43,10 @@ const styles = theme => ({
         marginBottom: 25,
     },
     button: {
-        border: "0.1em solid #EABA00",
+        border: "0.1em solid #008080",
         backgroundColor: "white",
         '&:hover': {
-            backgroundColor: '#EABA00',
+            backgroundColor: '#008080',
         },
         marginTop: 18,
     },
