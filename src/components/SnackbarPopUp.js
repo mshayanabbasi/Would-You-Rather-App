@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes, { string } from 'prop-types'
+import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import Snackbar from '@material-ui/core/Snackbar'
 import IconButton from '@material-ui/core/IconButton'
