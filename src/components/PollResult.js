@@ -7,6 +7,7 @@ import styles from './styles/PollResult'
 
 const PollResult = (props) => {
     const { question, classes } = props
+    
     return (
         <div className={classes.root}>
             <div className={classes.heading}>
