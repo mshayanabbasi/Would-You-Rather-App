@@ -6,6 +6,7 @@ const styles = theme => ({
         justifyContent: 'center',
         alignItems: 'center'
     },
+  
     main: {
         display: 'block',
         paddingTop: 10
