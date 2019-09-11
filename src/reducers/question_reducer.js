@@ -11,7 +11,7 @@ const question_reducer = ( state = {}, action ) => {
                 [action.question.id]: action.question
             }
         case SAVE_QUESTION_ANSWER:
-            return {
+           return {
                 ...state,
                 [action.qid]: {
                     ...state[action.qid],
