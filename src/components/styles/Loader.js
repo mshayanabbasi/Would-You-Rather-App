@@ -7,6 +7,7 @@ const styles = theme => ({
         textAlign: 'center',
         minHeight: '100vh'
     },
+    
     loader: {
         width: 100,
         height: 100,
