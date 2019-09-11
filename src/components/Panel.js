@@ -6,6 +6,7 @@ import styles from './styles/Panel'
 
 const Panel = (props) => {
     const { classes, headerType, children } = props
+  
     return (
         <div className={classes.centerScreen}>
             <div>
