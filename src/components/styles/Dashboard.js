@@ -47,9 +47,9 @@ const styles = theme => ({
             duration: theme.transitions.duration.leavingScreen,
         }),
         overflowX: 'hidden',
-        width: theme.spacing.unit * 7 + 1,
+        width: theme.spacing(1) * 7 + 1,
         [theme.breakpoints.up('sm')]: {
-            width: theme.spacing.unit * 9 + 1,
+            width: theme.spacing(1) * 9 + 1,
         }
     },
     toolbar: {
@@ -60,7 +60,7 @@ const styles = theme => ({
         ...theme.mixins.toolbar
     },
     content: {
-        padding: theme.spacing.unit * 3,
+        padding: theme.spacing(1) * 3,
         marginTop: 65,
         justifyContent: 'center',
         display: 'grid',
