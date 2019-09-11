@@ -1,6 +1,6 @@
 const styles = theme => ({
     close: {
-        padding: theme.spacing.unit / 2,
+        padding: theme.spacing(1) / 2,
     },
     position: {
         marginLeft: 30
