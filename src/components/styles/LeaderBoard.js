@@ -6,6 +6,7 @@ const styles = theme => ({
         width: 'inherit',
         display: 'flex'
     },
+    
     gridListTile: {
         justifyContent: 'center',
         display: 'flex'
