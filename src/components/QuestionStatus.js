@@ -11,6 +11,7 @@ import QuestionBoard from './QuestionBoard'
 import PropTypes from 'prop-types'
 import styles from './styles/QuestionStatus'
 
+
 const QuestionStatus = (props) => {
     const { classes, questions, users, type } = props
     return (
