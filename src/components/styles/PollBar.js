@@ -18,6 +18,7 @@ const styles = theme => ({
         margin: 15,
         borderRadius: 3
     },
+    
     subHeadDiv: {
         marginTop: 8,
         marginBottom: 20,
