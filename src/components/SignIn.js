@@ -16,7 +16,8 @@ import { dispatch_authedUserAction } from '../actions/actionDispatchers'
 import { withRouter, Redirect } from 'react-router-dom'
 
 const SignIn = (props) => {
-    const { classes, users, authedUser, login } = props
+	const { classes, users, authedUser, login } = props
+	console.log('users', users)
     return (
 		authedUser ? <Redirect 
 			to={{
@@ -41,10 +42,10 @@ const SignIn = (props) => {
             			Sign In
             		</Typography>
             		<FormControl variant="filled" className={classes.actions} component="div">
-						<InputLabel htmlFor="username" FormLabelClasses={{
-							root: classes.cssLabel,
-							focused: classes.cssFocused
-						}}>User Name</InputLabel>
+					<InputLabel htmlFor="username" FormLabelClasses={{
+                            root: classes.cssLabel,
+                            focused: classes.cssFocused,
+                        }}>User Name</InputLabel>
 						<Select 
 							value={authedUser}
 							onChange={login}
@@ -60,8 +61,7 @@ const SignIn = (props) => {
 								  <MenuItem key={user.id} value={user.id} >
 									  {user.name}
 								  </MenuItem>)
-									
-							}
+							} 
 						</Select>
             		</FormControl>
             	</CardContent>
