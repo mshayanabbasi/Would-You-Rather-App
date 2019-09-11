@@ -19,8 +19,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import HomeOutlined from '@material-ui/icons/HomeOutlined'
 import QuestionAnswer from '@material-ui/icons/QuestionAnswerOutlined'
-import TrendingUpSharp from '@material-ui/icons/TrendingUpSharp'
-import ExitToApp from '@material-ui/icons/ExitToApp'
+import TrendingUpSharp from '@material-ui/icons/TrendingUpSharp';
+import ExitToApp from '@material-ui/icons/ExitToApp';
 import styles from './styles/Dashboard'
 import Avatar from './Avatar'
 import { withStyles } from '@material-ui/core/styles'
@@ -118,13 +118,13 @@ class Dashboard extends Component {
                         </Link>
                         <Link to="/leaderboard">
                             <ListItem button key="LeaderBoard">
-                                <ListItemIcon><HomeOutlined /></ListItemIcon>
+                                <ListItemIcon><TrendingUpSharp /></ListItemIcon>
                                 <ListItemText primary="Leader Board" />
                             </ListItem>
                         </Link>
                         <Link to="/signout">
                             <ListItem button key="SignOut">
-                                <ListItemIcon><HomeOutlined /></ListItemIcon>
+                                <ListItemIcon><ExitToApp /></ListItemIcon>
                                 <ListItemText primary="Sign Out" />
                             </ListItem>
                         </Link>
