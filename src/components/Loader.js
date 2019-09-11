@@ -6,6 +6,7 @@ import CircularProgress from '@material-ui/core/CircularProgress'
 
 const Loader = (props) => {
     const { classes } = props
+    
     return (
         <div className={classes.centerScreen}>
             <CircularProgress className={classes.loader}/>
