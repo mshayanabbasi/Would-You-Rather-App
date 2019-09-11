@@ -8,6 +8,7 @@ const styles = theme => ({
         textAlign: 'center',
         minHeight: 'inherit'
     },
+    
     body: {
         minHeight: 'inherit',
         border: '0.05em solid silver'
