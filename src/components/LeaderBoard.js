@@ -11,6 +11,7 @@ import WhiteCard from './WhiteCard'
 import { connect } from 'react-redux'
 const LeaderBoard = (props) => {
     const { classes, userRanking } = props
+
     return (
         Object.values(userRanking).map((user) => {
             const { id, name, avatarURL, questionAsked, answered } = user
