@@ -6,6 +6,7 @@ import styles from './styles/ScoreBadge'
 
 const ScoreBadge = (props) => {
     const { totalScore, classes } = props
+
     return (
         <div className={classes.main}>
             <h4 style={{ margin: 0 }}>SCORE</h4>
