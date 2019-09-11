@@ -4,6 +4,7 @@ import { dispatch_userLoggedOutAction } from '../actions/actionDispatchers'
 import { connect } from 'react-redux'
 const SignOut = (props) => {
     props.signout()
+    
     return (
         <Redirect from='/' to='/'/>
     )
