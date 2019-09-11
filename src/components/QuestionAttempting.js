@@ -20,7 +20,7 @@ import { dispatch_saveQuestionAnswerAction } from '../actions/actionDispatchers'
 class QuestionAttempting extends Component {
     state = { 
         optionSelected: null,
-        submitted: this.props.alreadyAnswered
+        submited: this.props.alreadyAnswered
     }
     handleChange = (e) => {
         this.setState({
@@ -28,14 +28,13 @@ class QuestionAttempting extends Component {
         })
     }
     handleSubmit = () => {
-        const { authedUser } = this.props
+        const { authedUser, } = this.props
         const qid = this.props.question.id
-        const answer = this.props.optionSelected
+        const answer = this.state.optionSelected
+
         if (this.state.optionSelected) {
             this.props.saveAnswer(authedUser, qid, answer)
-                .then(() => this.setState({
-                    submitted: true
-                }))
+                .then(() => this.setState({ submited: true }))
         }
         else {
             alert("Please select any one option to submit")
@@ -43,53 +42,57 @@ class QuestionAttempting extends Component {
     }
 
     render() {
-        const { classes, question, authorName, avatarURL, QuestionNotFound } = this.props
-        const { submitted } = this.state 
+        const { classes, question, authorName, avatarURL, QuestionNotFound } = this.props;
+        const { submited } = this.state
         return ( 
             QuestionNotFound ? 
-            <Redirect to='/error'/>
+            <Redirect to='/error' />
             : (
-            <Panel headerType={`${authorName} ${(!submitted) ? 'asks' : 'asked' }`}>
-                <WhiteCard>
-                    <QuestionBoard avatarURL={avatarURL} authorName={authorName}>
-                        {
-                            (!submitted)
-                            ? <div className={classes.root}>
-                                <Typography variant="h4" component="h3" className={classes.heading}>
-                                    Would You Rather ...
-                                </Typography>
-                                <Divider style={{ marginLeft: 20, marginRight: 20 }}/>
-                                <RadioGroup 
-                                    aria-label="position"
-                                    name="position"
-                                >
-                                    <FormControlLabel 
-                                        value="optionOne"
-                                        control={<Radio classes={{ root: classes.radio, checked: classes.checked }} />}
-                                        label={question.optionOne.text}
-                                        labelPlacement="end"
-                                        classes={{ label: classes.answerLabels }}
-                                        />
-                                        onClick={this.handleChange}
-                                    <FormControlLabel 
-                                        value="optionTwo"
-                                        control={<Radio classes={{ root: classes.radio, checked: classes.checked }}/>}
-                                        label={question.optionTwo.text}
-                                        labelPlacement="end"
-                                        classes={{ label: classes.answerLabels }}
-                                        onClick={this.handleChange}
-                                    />
-                                </RadioGroup>
-                                <Button variant="contained" className={classes.button} onClick={this.handleSubmit}>
-                                    Submit
-                                </Button>
-                              </div> : <PollResult question={question} />
-                        }
-                    </QuestionBoard>
-                </WhiteCard>
-            </Panel>
+                <Panel headerType={`${authorName} ${(!submited) ? 'asks' : 'asked'}`} >
+                    <WhiteCard>
+                        <QuestionBoard avatarURL={avatarURL} authorName={authorName}>
+                            {
+                                (!submited)
+                                    ? <div className={classes.root}>
+                                        <Typography variant="h4" component="h3" className={classes.heading}>
+                                            Would you rather...
+                                    </Typography>
+                                        <Divider style={{ marginLeft: 20, marginRight: 20 }} />
+
+                                        <RadioGroup
+                                            aria-label="position"
+                                            name="position"
+                                        >
+                                            <FormControlLabel
+                                                value="optionOne"
+                                                control={<Radio classes={{ root: classes.radio, checked: classes.checked }} />}
+                                                label={question.optionOne.text}
+                                                labelPlacement="end"
+                                                classes={{ label: classes.answerLabels }}
+                                                onClick={this.handleChange}
+                                            />
+                                            <FormControlLabel
+                                                value="optionTwo"
+                                                control={<Radio classes={{ root: classes.radio, checked: classes.checked }} />}
+                                                label={question.optionTwo.text}
+                                                labelPlacement="end"
+                                                classes={{ label: classes.answerLabels }}
+                                                onClick={this.handleChange}
+                                            />
+                                        </RadioGroup>
+
+                                        <Button variant="contained" className={classes.button} onClick={this.handleSubmit} >
+                                            Submit
+                                    </Button>
+                                    </div>
+                                    : <PollResult question={question} />
+                            }
+                        </QuestionBoard>
+                    </WhiteCard>
+                </Panel>
             )
-         );
+            );
+
     }
 }
  
@@ -112,7 +115,7 @@ const mapStateToProps = (state, ownProps) => {
     const { qid } = ownProps.match.params
     return {
         question: (state.questions[qid]) ? state.questions[qid] : null,
-        authorName: (state.questions[qid]) ? state.questions[state.questions[qid].author].name : null,
+        authorName: (state.questions[qid]) ? state.users[state.questions[qid].author].name : null,
         authedUser: (state.questions[qid]) ? state.authedUser : null,
         alreadyAnswered: (state.questions[qid]) ? state.users[state.authedUser].answers.hasOwnProperty(qid) : null,
         avatarURL: (state.questions[qid]) ? state.users[state.questions[qid].author].avatarURL : null,
