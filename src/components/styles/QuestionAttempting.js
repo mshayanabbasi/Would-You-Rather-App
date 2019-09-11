@@ -25,6 +25,7 @@ const styles = theme => ({
         alignItems: 'center',
         textAlign: 'center'
     },
+    
     heading: {
         textAlign: 'left',
         padding: 20
