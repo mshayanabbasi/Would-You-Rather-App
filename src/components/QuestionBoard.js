@@ -6,6 +6,7 @@ import PropTypes from 'prop-types'
 
 const QuestionBoard = (props) => {
     const { classes, avatarURL, authorName, children } = props
+    
     return (
         <div name="abc" className={classes.centerScreen}>
             <Avatar width={150} height={150} avatarURL={avatarURL} authorName={authorName} />
