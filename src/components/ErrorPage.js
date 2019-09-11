@@ -19,6 +19,7 @@ const ErrorPage = (props) => {
     )
 }
 
+
 ErrorPage.propTypes = {
     classes: PropTypes.object.isRequired
 }
