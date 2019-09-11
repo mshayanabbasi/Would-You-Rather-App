@@ -10,6 +10,7 @@ import { withRouter } from 'react-router-dom'
 
 const PollBar = (props) => {
     const { classes, authedUser, option, totalVotes } = props
+    
     return (
         <div className={classes.root}>
             <div className={classes.subHeadDiv}>
