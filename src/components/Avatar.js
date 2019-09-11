@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 
+
 const Avatar = (props) => {
     const { width, height, avatarURL, authorName }  = props
     return (
