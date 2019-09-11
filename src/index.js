@@ -4,7 +4,7 @@ import App from './components/App';
 import store from './store'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
-import * as serviceWorker from './serviceWorker';
+
 
 ReactDOM.render(
     <BrowserRouter>
@@ -15,4 +15,4 @@ ReactDOM.render(
     , 
     document.getElementById('root'));
 
-serviceWorker.unregister();
+
