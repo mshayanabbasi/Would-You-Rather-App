@@ -8,6 +8,7 @@ const styles = theme => ({
         minHeight: '100vh',
         background: '#00cccc'
     },
+    
     text: {
         color: 'red'
     }
