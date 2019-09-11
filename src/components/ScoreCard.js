@@ -7,6 +7,7 @@ import PropTypes from 'prop-types'
 
 const ScoreCard = (props) => {
     const { classes, name, questionAsked, answered } = props
+
     return (
         <div className={classes.root}>
             <h1 className={classes.h1}>{name}</h1>
