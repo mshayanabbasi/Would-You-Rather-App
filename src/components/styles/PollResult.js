@@ -5,6 +5,7 @@ const styles = theme => ({
         alignItems: 'center',
         textAlign: 'center'
     },
+    
     heading: {
         background: '#008080',
         padding: 10
