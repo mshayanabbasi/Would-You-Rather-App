@@ -6,10 +6,10 @@ import user_reducer from './user_reducer'
 
 
 const rootReducer = combineReducers({
-    loading_reducer,
-    login_reducer,
-    question_reducer,
-    user_reducer
+    loading: loading_reducer,
+    authedUser: login_reducer,
+    questions: question_reducer,
+    users: user_reducer
 })
 
 export default rootReducer
